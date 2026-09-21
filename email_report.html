@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Email Sorter — Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #0b0f17;
+        --surface: #11161f;
+        --border: #1f2633;
+        --text: #e6eaf2;
+        --muted: #7c869c;
+        --accent: #5eead4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Space Grotesk', sans-serif;
+        padding: 48px 24px;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+
+    header { margin-bottom: 36px; }
+    .eyebrow {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: var(--accent);
+    }
+    h1 { font-size: 32px; font-weight: 700; margin-top: 6px; letter-spacing: -0.02em; }
+    .logline {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 10px;
+    }
+
+    .layout { display: grid; grid-template-columns: 260px 1fr; gap: 28px; align-items: start; }
+    @media (max-width: 720px) { .layout { grid-template-columns: 1fr; } }
+
+    .panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 20px;
+        position: sticky;
+        top: 24px;
+    }
+    .panel-title {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 14px;
+    }
+    .big-number { font-size: 40px; font-weight: 700; line-height: 1; }
+    .big-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .avg { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    .stat-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        padding: 7px 0;
+        cursor: pointer;
+        text-align: left;
+    }
+    .stat-row.active .stat-name { color: var(--accent); }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .stat-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .stat-bar-track { width: 40px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+    .stat-bar-fill { display: block; height: 100%; }
+    .stat-count { font-family: 'JetBrains Mono', monospace; color: var(--muted); width: 20px; text-align: right; flex-shrink: 0; }
+
+    .entry {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid;
+        border-radius: 6px;
+        padding: 16px 18px;
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: rise 0.4s ease forwards;
+        animation-delay: var(--delay);
+    }
+    @keyframes rise {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .entry-top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    .entry-index { color: var(--muted); }
+    .entry-tag { font-weight: 600; }
+    .entry-confidence { margin-left: auto; color: var(--muted); }
+    .entry-subject { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+    .entry-from { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .entry-reason { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .entry.hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div class="eyebrow">ai-email-sorter</div>
+        <h1>Inbox triage log</h1>
+        <div class="logline">$ python automate_email_sorter.py — 10 emails traités — 21/09/2026 13:21</div>
+    </header>
+
+    <div class="layout">
+        <aside class="panel">
+            <div class="panel-title">résumé</div>
+            <div class="big-number">10</div>
+            <div class="big-label">emails classés</div>
+            <div class="avg">
+                <div class="big-number" style="font-size:24px;">95%</div>
+                <div class="big-label">confiance moyenne</div>
+            </div>
+            <div class="avg">
+                
+        <button class="stat-row" data-filter="Newsletter-Notification">
+            <span class="stat-dot" style="background:#94a3b8"></span>
+            <span class="stat-name">Newsletter-Notification</span>
+            <span class="stat-bar-track"><span class="stat-bar-fill" style="width:80%; background:#94a3b8"></span></span>
+            <span class="stat-count">8</span>
+        </button>
+        <button class="stat-row" data-filter="RH">
+            <span class="stat-dot" style="background:#a78bfa"></span>
+            <span class="stat-name">RH</span>
+            <span class="stat-bar-track"><span class="stat-bar-fill" style="width:20%; background:#a78bfa"></span></span>
+            <span class="stat-count">2</span>
+        </button>
+            </div>
+        </aside>
+
+        <main id="log">
+            
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:0ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[01]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">95%</span>
+            </div>
+            <div class="entry-subject">Découvrez ce que vous pouvez faire maintenant</div>
+            <div class="entry-from">from ChatGPT <noreply@email.openai.com></div>
+            <div class="entry-reason">// Il s'agit d'un email promotionnel ou informatif standard au format HTML avec un sujet accrocheur.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:40ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[02]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">100%</span>
+            </div>
+            <div class="entry-subject">✅ Mohamed Hedi, terminez de configurer votre Windows avec Google</div>
+            <div class="entry-from">from Google <no-reply@google.com></div>
+            <div class="entry-reason">// Il s'agit d'une notification automatique pour la configuration d'un compte sur un nouvel appareil.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:80ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[03]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">100%</span>
+            </div>
+            <div class="entry-subject">Alerte de sécurité</div>
+            <div class="entry-from">from Google <no-reply@accounts.google.com></div>
+            <div class="entry-reason">// Il s'agit d'une notification automatique de sécurité provenant de Google concernant une nouvelle connexion.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:120ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[04]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">90%</span>
+            </div>
+            <div class="entry-subject">Traduisez tout, à votre façon</div>
+            <div class="entry-from">from ChatGPT <noreply@email.openai.com></div>
+            <div class="entry-reason">// Il s'agit d'un email au format HTML standard typique d'une newsletter ou d'une notification automatisée.</div>
+        </div>
+        <div class="entry" data-category="RH" style="--delay:160ms; border-left-color:#a78bfa">
+            <div class="entry-top">
+                <span class="entry-index">[05]</span>
+                <span class="entry-tag" style="color:#a78bfa">RH</span>
+                <span class="entry-confidence">85%</span>
+            </div>
+            <div class="entry-subject">Entry qualification documents - University</div>
+            <div class="entry-from">from University of Trieste <reply-here-p1528-506929-54d00c95ffddaa7eddfd32ac642467ee@mail-eu.dreamapply.com></div>
+            <div class="entry-reason">// Le document concerne des qualifications d'entrée pour une université, lié au recrutement ou à l'admission.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:200ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[06]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">100%</span>
+            </div>
+            <div class="entry-subject">Mises à jour de la politique de confidentialité d’OpenAI</div>
+            <div class="entry-from">from OpenAI <noreply@email.openai.com></div>
+            <div class="entry-reason">// Il s'agit d'une notification automatique concernant une mise à jour de politique de confidentialité.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:240ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[07]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">95%</span>
+            </div>
+            <div class="entry-subject">Vos photos, retouchées avec ChatGPT</div>
+            <div class="entry-from">from ChatGPT <noreply@email.openai.com></div>
+            <div class="entry-reason">// Il s'agit d'un email marketing automatisé proposant de découvrir des fonctionnalités produit.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:280ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[08]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">100%</span>
+            </div>
+            <div class="entry-subject">Quelques idées simples pour faire le plein d’énergie dès aujourd’hui</div>
+            <div class="entry-from">from ChatGPT <noreply@email.openai.com></div>
+            <div class="entry-reason">// Le sujet et le format HTML indiquent clairement une infolettre de bien-être ou de conseils.</div>
+        </div>
+        <div class="entry" data-category="RH" style="--delay:320ms; border-left-color:#a78bfa">
+            <div class="entry-top">
+                <span class="entry-index">[09]</span>
+                <span class="entry-tag" style="color:#a78bfa">RH</span>
+                <span class="entry-confidence">85%</span>
+            </div>
+            <div class="entry-subject">Entry qualification documents - University</div>
+            <div class="entry-from">from University of Trieste <reply-here-p1528-504042-7ba0dec6818bd88c3254435bf60a6afb@mail-eu.dreamapply.com></div>
+            <div class="entry-reason">// Le mail concerne des documents de qualification d'entrée pour une université, lié au recrutement ou à l'admission.</div>
+        </div>
+        <div class="entry" data-category="Newsletter-Notification" style="--delay:360ms; border-left-color:#94a3b8">
+            <div class="entry-top">
+                <span class="entry-index">[10]</span>
+                <span class="entry-tag" style="color:#94a3b8">Newsletter-Notification</span>
+                <span class="entry-confidence">100%</span>
+            </div>
+            <div class="entry-subject">Posez toutes vos questions – absolument toutes</div>
+            <div class="entry-from">from ChatGPT <noreply@email.openai.com></div>
+            <div class="entry-reason">// Il s'agit d'un email marketing typique avec du code HTML et un appel à l'action pour poser des questions.</div>
+        </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    const rows = document.querySelectorAll('.stat-row');
+    const entries = document.querySelectorAll('.entry');
+    let active = null;
+
+    rows.forEach(row => {
+        row.addEventListener('click', () => {
+            const filter = row.dataset.filter;
+            if (active === filter) {
+                active = null;
+                rows.forEach(r => r.classList.remove('active'));
+                entries.forEach(e => e.classList.remove('hidden'));
+            } else {
+                active = filter;
+                rows.forEach(r => r.classList.toggle('active', r.dataset.filter === filter));
+                entries.forEach(e => e.classList.toggle('hidden', e.dataset.category !== filter));
+            }
+        });
+    });
+</script>
+</body>
+</html>

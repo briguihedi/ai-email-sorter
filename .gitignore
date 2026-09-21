@@ -1,0 +1,13 @@
+# Secrets - NE JAMAIS uploader sur GitHub
+.env
+credentials.json
+token.json
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Modèle entraîné (optionnel de le garder ou pas sur GitHub - gros fichiers)
+*.pkl

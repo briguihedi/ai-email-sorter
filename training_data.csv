@@ -1,0 +1,100 @@
+text,category
+"Veuillez trouver ci-joint la facture N°2024-0568 pour le mois de mars. Montant total : 1250 DT. Merci de procéder au règlement sous 30 jours.",Facture
+"Votre facture mensuelle est disponible. Le montant dû est de 89.99 EUR, à régler avant le 15 du mois.",Facture
+"Rappel : votre paiement de la facture #4521 est en retard. Merci de régulariser rapidement pour éviter des pénalités.",Facture
+"Votre facture d'électricité du mois de janvier est disponible sur votre espace client. Montant : 156 DT.",Facture
+"Objet : facture impayée. Merci de régler le montant de 320 DT avant la fin du mois pour éviter la coupure de service.",Facture
+"Voici votre facture récapitulative pour l'abonnement annuel, montant total 599 EUR TTC.",Facture
+"Un nouveau relevé de facturation est disponible. Merci de vérifier le détail des consommations de ce mois.",Facture
+"Le montant de 78.90 DT a été prélevé sur votre compte suite à votre dernier achat.",Facture
+"Facture proforma jointe pour validation avant émission de la facture définitive.",Facture
+"Merci de nous transmettre votre règlement de la facture n°8890 dans les meilleurs délais.",Facture
+"Votre relevé bancaire mensuel indique un solde débiteur, merci de régulariser sous 10 jours.",Facture
+"Ci-joint le reçu de paiement pour votre dernier achat, montant total 45 DT TTC.",Facture
+"Votre échéancier de paiement pour le trimestre est disponible, prochaine échéance le 5 du mois.",Facture
+"Avis de prélèvement automatique : 65 EUR seront débités le 10 de ce mois pour votre abonnement.",Facture
+"Merci de noter que le montant total dû s'élève désormais à 210 DT, intérêts de retard inclus.",Facture
+"Votre note d'honoraires pour la prestation réalisée le mois dernier est jointe à ce message.",Facture
+"Le solde de votre compte client affiche un impayé de 340 DT à régulariser rapidement.",Facture
+"Reçu fiscal annuel disponible pour votre déclaration d'impôts, montant total versé : 890 DT.",Facture
+"Votre quittance de loyer du mois en cours est disponible en pièce jointe.",Facture
+"Relance amiable : merci de régler la somme de 150 DT restant due sur votre compte.",Facture
+"Bonjour, je n'arrive pas à me connecter à mon compte depuis hier. J'ai essayé de réinitialiser mon mot de passe mais je ne reçois pas l'email.",Support
+"L'application plante à chaque fois que j'essaie d'exporter mes données en PDF. Pouvez-vous m'aider ?",Support
+"Bonjour, j'ai un bug sur la page de paiement, la carte bancaire n'est pas acceptée alors qu'elle est valide.",Support
+"Merci de nous contacter pour tout problème technique, notre équipe support est disponible 24/7.",Support
+"Suite à notre appel, voici le récapitulatif du ticket d'incident #3021 concernant votre compte.",Support
+"Le site est très lent depuis ce matin, est-ce un problème connu de votre côté ?",Support
+"Je n'arrive pas à télécharger le fichier depuis l'application, un message d'erreur 500 s'affiche.",Support
+"Comment puis-je réinitialiser mon mot de passe ? Le lien reçu par email ne fonctionne pas.",Support
+"Mon compte a été bloqué après plusieurs tentatives de connexion, pouvez-vous le débloquer ?",Support
+"J'ai un problème avec la synchronisation de mes données entre l'application mobile et le site web.",Support
+"L'écran reste bloqué sur le chargement depuis 10 minutes, rien ne se passe.",Support
+"Impossible d'ajouter une pièce jointe supérieure à 5 Mo, un message d'erreur apparaît systématiquement.",Support
+"La notification par SMS ne fonctionne plus depuis la dernière mise à jour de l'application.",Support
+"Mon écran affiche une page blanche après la connexion, avez-vous une solution ?",Support
+"Le bouton de validation ne répond plus lorsque je clique dessus, pouvez-vous vérifier ?",Support
+"J'ai perdu l'accès à mon espace personnel après le changement de mon numéro de téléphone.",Support
+"Le formulaire de contact renvoie systématiquement une erreur au moment de l'envoi.",Support
+"L'application se ferme automatiquement dès que j'ouvre la section paramètres.",Support
+"Depuis la mise à jour, je ne reçois plus aucune notification push sur mon téléphone.",Support
+"La recherche interne du site ne retourne aucun résultat, même pour des mots simples.",Support
+"Votre demande de congé du 15 au 20 juillet a été approuvée par votre manager.",RH
+"Rappel : la réunion d'intégration des nouveaux employés aura lieu ce vendredi à 10h en salle B.",RH
+"Merci de compléter votre dossier administratif (CIN, RIB, diplômes) avant la fin du mois pour la mise à jour de votre contrat.",RH
+"Votre bulletin de paie du mois de février est disponible sur le portail RH.",RH
+"Nous avons le plaisir de vous informer que votre candidature a été retenue pour un entretien.",RH
+"Merci de signer votre nouveau contrat de travail et de le renvoyer avant vendredi.",RH
+"La formation obligatoire sur la sécurité informatique aura lieu la semaine prochaine, merci de vous inscrire.",RH
+"Votre évaluation annuelle est programmée pour le 20 du mois avec votre responsable direct.",RH
+"Suite à votre demande, voici les documents nécessaires pour votre attestation de travail.",RH
+"Le service RH vous informe que la mutuelle d'entreprise change de prestataire à partir du mois prochain.",RH
+"Votre période d'essai se termine ce mois-ci, un entretien de bilan sera programmé prochainement.",RH
+"Merci de renseigner vos disponibilités pour l'entretien annuel avec votre supérieur hiérarchique.",RH
+"Votre demande de télétravail a été validée pour les jours de mardi et jeudi.",RH
+"Le règlement intérieur de l'entreprise a été mis à jour, merci d'en prendre connaissance.",RH
+"Votre attestation de fin de contrat vous sera transmise sous 48 heures.",RH
+"Le pointage de vos heures supplémentaires du mois dernier a bien été enregistré.",RH
+"Un nouveau collaborateur rejoint votre équipe la semaine prochaine, merci de l'accueillir.",RH
+"Votre demande de formation externe a été approuvée par la direction.",RH
+"Le comité d'entreprise organise un événement convivial le mois prochain, inscriptions ouvertes.",RH
+"Votre solde de congés payés restant est de 12 jours pour cette année.",RH
+"Félicitations ! Vous avez gagné un iPhone 15 ! Cliquez ici immédiatement pour réclamer votre prix avant qu'il expire !",Spam
+"URGENT : Votre compte bancaire sera suspendu. Cliquez sur ce lien pour vérifier vos informations maintenant.",Spam
+"Gagnez de l'argent facilement depuis chez vous ! Aucune expérience requise, revenus garantis de 5000 DT par mois !",Spam
+"Offre exceptionnelle : -70% sur tous les produits, aujourd'hui seulement ! Ne manquez pas cette occasion unique.",Spam
+"Cher client, votre colis est bloqué en douane. Payez 2.99 EUR de frais pour le débloquer immédiatement via ce lien.",Spam
+"Félicitations, vous êtes le millionième visiteur ! Réclamez votre cadeau surprise en cliquant ici maintenant.",Spam
+"Votre abonnement Netflix a expiré, mettez à jour vos informations de paiement immédiatement via ce lien sécurisé.",Spam
+"ALERTE : activité suspecte détectée sur votre compte PayPal. Connectez-vous immédiatement pour éviter la suspension.",Spam
+"Investissez maintenant dans les cryptomonnaies et multipliez votre argent par 10 en une semaine, garanti !",Spam
+"Chère madame, cher monsieur, vous avez hérité d'une somme importante, contactez-nous rapidement pour la récupérer.",Spam
+"Cliquez ici maintenant pour débloquer votre cadeau exclusif avant minuit, offre limitée !",Spam
+"Votre mot de passe a expiré, cliquez sur ce lien externe pour le renouveler immédiatement.",Spam
+"Vous avez été tiré au sort parmi des milliers de participants, réclamez votre prix en urgence !",Spam
+"Attention, votre boîte mail sera fermée dans 24h si vous ne confirmez pas vos identifiants ici.",Spam
+"Perdez 10 kilos en une semaine sans effort grâce à cette pilule miracle, commandez maintenant !",Spam
+"Une opportunité unique de doubler votre salaire en travaillant seulement 2h par jour, inscrivez-vous vite.",Spam
+"Votre numéro a été sélectionné pour un tirage au sort exclusif, appelez ce numéro immédiatement.",Spam
+"Alerte sécurité : cliquez ici pour confirmer que ce n'est pas vous qui avez tenté de vous connecter.",Spam
+"Dernier jour pour profiter de cette offre incroyable, cliquez avant qu'il ne soit trop tard !",Spam
+"Bonjour, suite à notre échange, voici la proposition commerciale pour votre projet. N'hésitez pas si vous avez des questions.",Commercial
+"Merci pour votre intérêt pour nos services. Voici notre catalogue de prix et nos offres actuelles.",Commercial
+"Nous vous proposons un devis personnalisé pour votre projet de développement web, valable 30 jours.",Commercial
+"Suite à notre rendez-vous, voici le contrat à signer pour finaliser notre collaboration.",Commercial
+"Nous avons le plaisir de vous présenter notre nouvelle gamme de produits pour cette saison.",Commercial
+"Votre essai gratuit se termine bientôt, contactez notre équipe commerciale pour passer à l'offre premium.",Commercial
+"Suite à votre demande d'information, voici la brochure détaillant nos solutions et tarifs.",Commercial
+"Nous restons à votre disposition pour organiser une démonstration de notre produit à votre convenance.",Commercial
+"Notre équipe commerciale se tient à votre disposition pour répondre à toutes vos questions.",Commercial
+"Voici notre proposition tarifaire personnalisée suite à notre échange téléphonique de la semaine dernière.",Commercial
+"Nous serions ravis de planifier un appel pour discuter de vos besoins et de nos solutions.",Commercial
+"Découvrez notre nouvelle offre de partenariat, spécialement conçue pour les entreprises de votre secteur.",Commercial
+"Merci de votre visite sur notre stand, voici la documentation promise concernant nos services.",Commercial
+"Nous vous invitons à notre webinaire gratuit présentant nos dernières solutions d'entreprise.",Commercial
+"Votre référent commercial reste disponible pour toute question concernant votre projet en cours.",Commercial
+"Nous proposons actuellement une remise de 15% pour toute souscription avant la fin du mois.",Commercial
+"Suite à votre visite sur notre site, souhaitez-vous être recontacté par un conseiller ?",Commercial
+"Voici les modalités de notre partenariat ainsi que le calendrier de mise en œuvre proposé.",Commercial
+"Nous vous remercions pour votre fidélité et vous proposons une offre exclusive ce mois-ci.",Commercial
+"Un conseiller commercial vous contactera prochainement pour finaliser les détails de votre abonnement.",Commercial
